@@ -3,6 +3,7 @@
 import * as dotenv from 'dotenv'
 import express from 'express'
 import bcrypt from "bcrypt";
+import cors from 'cors'
 import { MongoClient } from 'mongodb'
 import { movieRouter } from './Product/movie.js'
 import { userRouter } from './Product/user.js';
@@ -10,6 +11,7 @@ import { userRouter } from './Product/user.js';
 
 dotenv.config()
 export const app = express()
+app.use(cors())
 export const PORT = process.env.PORT
 const The_url = process.env.MONGO_URL;
 console.log(process.env.PORT)
